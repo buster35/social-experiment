@@ -16,6 +16,9 @@ module.exports = {
   //TODO: add auto updates to deleteUser if a user is deleted?
   deleteUser(req, res) {
     User.findOneAndRemove({ _id: req.params.userId }).then((user) => res.json(user)).catch((err) => res.status(500).json(err));
+  },
+  updateUser(req, res) {
+    User.findOneAndUpdate({ _id: req.params.userId }).then((updatedUser) => res.json(updatedUser)).catch((err) => res.status(500).json(err));
   }
 
   //TODO: controllers to update users with friends, reactions to their thoughts, etc.
