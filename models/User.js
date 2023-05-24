@@ -30,6 +30,7 @@ const userSchema = new mongoose.Schema({
   id: false,
 });
 
+//"hook" for mongoose; BEFORE we SAVE any user record, encrypt the user's password
 userSchema.pre("save", function(next) {
   this.password = bcrypt(this.password, 10);
   next();

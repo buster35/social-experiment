@@ -13,10 +13,10 @@ const thoughtSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  reaction: {
+  reaction: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Reaction",
-  },
+  }],
 });
 
 const Thought = mongoose.model("Thought", thoughtSchema);
