@@ -1,5 +1,5 @@
 const { ObjectId } = require('mongoose').Types;
-const { User, Thought, Reaction, Friend } = require('../models');
+const { User, Thought, Reaction } = require('../models');
 
 module.exports = {
   createReaction(req, res) {

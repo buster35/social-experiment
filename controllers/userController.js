@@ -1,5 +1,5 @@
 const { ObjectId } = require('mongoose').Types;
-const { User, Thought, Reaction, Friend } = require('../models');
+const { User, Thought, Reaction } = require('../models');
 
 //any aggregate User functions will go here
 
