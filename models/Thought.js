@@ -20,7 +20,15 @@ const thoughtSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Reaction",
   }],
-});
+},
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true,
+    },
+    id: false,
+  }
+);
 
 thoughtSchema.virtual("reactionCount").get(function() {
   return this.reaction.length;
