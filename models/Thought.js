@@ -16,10 +16,10 @@ const thoughtSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  reaction: [{ //TODO:array of nested documents created with the reactionSchema
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Reaction",
-  }],
+  // reaction: [{ //TODO:array of nested documents created with the reactionSchema
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "Reaction",
+  // }],
 },
   {
     toJSON: {

@@ -4,7 +4,4 @@ const {getThoughts, createThought} = require("../../controllers/thoughtControlle
 // /api/thoughts
 router.route("/").get(getThoughts).post(createThought);
 
-// // /api/thoughts/:thoughtId
-// router.route("/:thoughtId");
-
 module.exports = router;
