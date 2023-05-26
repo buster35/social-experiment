@@ -25,7 +25,7 @@ module.exports = {
   },
   addFriend(req, res) {
     User.findByIdAndUpdate(req.params.userId,
-      { $addToSet: req.body },
+      { $addToSet: { friend: req.body } },
       { runValidators: true, new: true }
     ).then((newFriend) => newFriend ? res.status(200).json({ message: "Successfully added friend!" }) : res.json({ message: "Unable to add friend. Please see error message(s)."} ))
     .catch((err) => res.status(400).json(err));

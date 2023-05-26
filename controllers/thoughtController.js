@@ -8,15 +8,16 @@ module.exports = {
   },
   
   //async function instead of .then blocks
-  async createThought(req, res) {
+  async createThought(req, res) { //working
     try {
       const newThought = await Thought.create(req.body)
-      console.log(newThought)
       
-      //TODO: debug so will add thoughts to array instead of replacing
-      //{ _id: req.params.thoughtId (or userId?)}
-      const updateUser = await User.findByIdAndUpdate(req.body.username, { $addToSet: req.body.thought }, { new: true })
-  
+      //updates thought array for specific user when that user creates a new thought//
+      const updateUser = await User.findByIdAndUpdate(req.body.username,
+        { $addToSet: { thought: req.body._id } },
+        { new: true }
+      )
+
       res.status(200).json({ Thought: newThought, updateUser })
   } catch(err) {
     console.log(err)
