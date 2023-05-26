@@ -24,14 +24,10 @@ module.exports = {
       { runValidators: true, new: true }).then((updatedUser) => res.json(updatedUser)).catch((err) => res.status(500).json(err));
   },
   addFriend(req, res) {
-    console.log("test");
-    console.log(req.body);
-    console.log(req.params)
     User.findByIdAndUpdate(req.params.userId,
-      { $set: req.body },
+      { $addToSet: req.body },
       { runValidators: true, new: true }
     ).then((newFriend) => newFriend ? res.status(200).json({ message: "Successfully added friend!" }) : res.json({ message: "Unable to add friend. Please see error message(s)."} ))
     .catch((err) => res.status(400).json(err));
   },
-  //TODO: controllers to update users with friends, reactions to their thoughts, etc.
   };
