@@ -21,7 +21,10 @@ module.exports = {
   }},
 
   updateThought(req, res) {
-
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      { $set: req.body },
+      { runValidators: true, new: true }
+    ).then((thought) => res.json(thought)).catch((err) => res.status(400).json({ msg: err.message }))
   }
-
 };
