@@ -1,25 +1,28 @@
+const { ObjectId } = require('mongoose').Types;
 const mongoose = require("mongoose");
 
 const thoughtSchema = new mongoose.Schema({
+  _id: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
   thoughtText: {
     type: String,
     required: true,
     minlength: 1,
     maxlength: 280,
   },
-  createdAt: { //getter method?
+  createdAt: {
     type: Date,
     default: Date.now(),
   },
   username: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    type: String,
     required: true,
   },
-  // reaction: [{ //TODO:array of nested documents created with the reactionSchema
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "Reaction",
-  // }],
+  reaction: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Reaction",
+  }],
 },
   {
     toJSON: {

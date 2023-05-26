@@ -1,5 +1,5 @@
+const { ObjectId } = require('mongoose').Types;
 const mongoose = require("mongoose");
-// const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema(
   {
@@ -42,12 +42,6 @@ const userSchema = new mongoose.Schema(
 //   let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 //   return emailRegex.test(data);
 // };
-
-//"hook" for mongoose; BEFORE we SAVE any user record, encrypt the user's password
-// userSchema.pre("save", function (next) {
-//   this.password = bcrypt(this.password, 10);
-//   next();
-// });
 
 //virtual to add additional info for # of friends in query result for each User
 userSchema.virtual("friendCount").get(function () {

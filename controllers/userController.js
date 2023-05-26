@@ -10,7 +10,7 @@ module.exports = {
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId }).select("__v").then((user) => res.json(user)).catch((err) => res.status(500).json(err)); //create a userId property that ref's to Mongoose Id.
   },
-  createUser(req, res) { //500 status w/ err msg working; error coming from running (after req passes through routes and this fn is called on)
+  createUser(req, res) {
     console.log(req.body) //working
     User.create(req.body).then((user) => res.json({ user })).catch((err) => res.status(500).json(err)); //req.body is our JSON input in Insomnia
   },
