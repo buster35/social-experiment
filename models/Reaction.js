@@ -1,18 +1,27 @@
 const mongoose = require("mongoose");
+const getRandomReaction = require("../utils/data")
 
-//TODO: what do i need for the reaction body?
 const reactionSchema = new mongoose.Schema({
-  reactionBody: {
-    type: {}
+  reaction: {
+    default: function () {
+      getRandomReaction()
+    }
   },
-  username: {
+  thoughtId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "Thought"
   },
   createdAt: {
     type: Date,
     default: Date.now(),
   },
+},
+{
+  toJSON: {
+    virtuals: true,
+    getters: true,
+  },
+  id: false,
 });
 
 const Reaction = mongoose.model("Reaction", reactionSchema);

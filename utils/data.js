@@ -28,8 +28,6 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const getRandomReaction = () => {
   return getRandomArrItem(reactions);}
 
-console.log(getRandomReaction()); //working
-
 //can this be used to add to reaction array in Thought Object?
 // const getRandomAssignments = (int) => {
 //   const results = [];
@@ -41,3 +39,5 @@ console.log(getRandomReaction()); //working
 //   }
 //   return results;
 // };
+
+module.exports = getRandomReaction;

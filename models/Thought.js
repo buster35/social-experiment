@@ -1,4 +1,3 @@
-const { ObjectId } = require('mongoose').Types;
 const mongoose = require("mongoose");
 
 const thoughtSchema = new mongoose.Schema({

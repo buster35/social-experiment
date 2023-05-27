@@ -38,8 +38,8 @@ const userSchema = new mongoose.Schema(
 );
 
 //Nice email validation fn from Stack Overflow: https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax
-// const validateEmail = function (data) {
-//   let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+// function validateEmail(data) {
+//   let emailRegex = `${/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/}`;
 //   return emailRegex.test(data);
 // };
 
