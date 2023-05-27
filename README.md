@@ -5,6 +5,7 @@ My motivation for this small project was to "wet" my toes so to speak in the wor
 I built this project in order to further my understanding of back-end web development and CRUD operations associated with the Mongoose Node program, which is a companion to the MongoDB database.
 In my opinion social media effectively causes more problems than solutions; however, this program demonstrates how a barebones social media website/app would store user information server-side in a NoSQL environment.
 I learned a lot, especially in regards to MongoDB and the syntax associated with the command line program - Mongoose - which is used to interact with the database.
+
 ## Table of Contents
 ### [Installation](#installation)
 ### [Usage](#usage)
